@@ -33,7 +33,7 @@ const TripAssignCreate = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/drivers'); // Endpoint for users
+        const response = await fetch('https://backendserver-4urp.onrender.com/api/drivers'); // Endpoint for users
         const data = await response.json();
         setUsers(data);
       } catch (error) {
@@ -47,7 +47,7 @@ const TripAssignCreate = () => {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/locationDatas');
+        const response = await fetch('https://backendserver-4urp.onrender.com/api/locationDatas');
         const data = await response.json();
         setLocations(data);
       } catch (error) {
@@ -62,7 +62,7 @@ const TripAssignCreate = () => {
     if (tripData.userName) {
       const fetchDriverByUser = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/api/drivers/username/${tripData.userName}`);
+          const response = await fetch(`https://backendserver-4urp.onrender.com/api/drivers/username/${tripData.userName}`);
           const data = await response.json();
           if (data) {
             setTripData((prevData) => ({
@@ -126,7 +126,7 @@ const TripAssignCreate = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/tripAssign/create-new-trip', {
+      const response = await fetch('https://backendserver-4urp.onrender.com/api/tripAssign/create-new-trip', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

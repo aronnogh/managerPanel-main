@@ -20,7 +20,7 @@ const UpdateCar = () => {
     const fetchCar = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch(`http://localhost:5000/api/cars/${id}`);
+        const response = await fetch(`https://backendserver-4urp.onrender.com/api/cars/${id}`);
         if (!response.ok) throw new Error("Car not found.");
         const data = await response.json();
         setCar(data);
@@ -64,7 +64,7 @@ const UpdateCar = () => {
     setError(""); // Reset error
 
     try {
-      const response = await fetch(`http://localhost:5000/api/cars/update/${id}`, {
+      const response = await fetch(`https://backendserver-4urp.onrender.com/api/cars/update/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

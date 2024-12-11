@@ -34,7 +34,7 @@ const ExTableCar = () => {
   const fetchCars = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/api/cars/");
+      const response = await fetch("https://backendserver-4urp.onrender.com/api/cars/");
       if (!response.ok) throw new Error("Failed to fetch cars");
       const data = await response.json();
       setCars(data);
@@ -49,7 +49,7 @@ const ExTableCar = () => {
   const handleDelete = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/cars/delete/${deleteId}`,
+        `https://backendserver-4urp.onrender.com/api/cars/delete/${deleteId}`,
         { method: "DELETE" }
       );
       if (!response.ok) throw new Error("Failed to delete car");

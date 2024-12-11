@@ -31,7 +31,7 @@ const AddNewDriver = () => {
       // Fetch existing driver data from the API
       const fetchDriver = async () => {
         try {
-          const response = await fetch(`http://localhost:5000/api/drivers/${id}`);
+          const response = await fetch(`https://backendserver-4urp.onrender.com/api/drivers/${id}`);
           if (response.ok) {
             const data = await response.json();
             setDriverData(data); // Pre-fill the form with current driver data
@@ -58,8 +58,8 @@ const AddNewDriver = () => {
     try {
       const response = await fetch(
         isUpdate
-          ? `http://localhost:5000/api/drivers/update/${id}`
-          : "http://localhost:5000/api/drivers",
+          ? `https://backendserver-4urp.onrender.com/api/drivers/update/${id}`
+          : "https://backendserver-4urp.onrender.com/api/drivers",
         {
           method,
           headers: {

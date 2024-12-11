@@ -33,7 +33,7 @@ const AddNewCar = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/cars", {
+      const response = await fetch("https://backendserver-4urp.onrender.com/api/cars", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

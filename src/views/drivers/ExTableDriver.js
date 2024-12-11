@@ -24,7 +24,7 @@ const ExTableDriver = () => {
 
   const fetchDrivers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/drivers/");
+      const response = await fetch("https://backendserver-4urp.onrender.com/api/drivers/");
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -38,7 +38,7 @@ const ExTableDriver = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/drivers/delete/${id}`, {
+      const response = await fetch(`https://backendserver-4urp.onrender.com/api/drivers/delete/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {

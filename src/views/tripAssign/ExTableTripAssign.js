@@ -22,9 +22,9 @@ const ExTableTripAssign = () => {
     const fetchData = async () => {
       try {
         const [tripRes, driverRes, locationRes] = await Promise.all([
-          fetch("http://localhost:5000/api/tripAssign/"),
-          fetch("http://localhost:5000/api/drivers"),
-          fetch("http://localhost:5000/api/locationDatas"),
+          fetch("https://backendserver-4urp.onrender.com/api/tripAssign/"),
+          fetch("https://backendserver-4urp.onrender.com/api/drivers"),
+          fetch("https://backendserver-4urp.onrender.com/api/locationDatas"),
         ]);
 
         const [tripData, driverData, locationData] = await Promise.all([
@@ -56,7 +56,7 @@ const ExTableTripAssign = () => {
 
   const handleMarkAsDone = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/tripAssign/${id}/done`, {
+      const response = await fetch(`https://backendserver-4urp.onrender.com/api/tripAssign/${id}/done`, {
         method: "PUT",
       });
       if (response.ok) {
@@ -72,7 +72,7 @@ const ExTableTripAssign = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/tripAssign/delete/${id}`, {
+      const response = await fetch(`https://backendserver-4urp.onrender.com/api/tripAssign/delete/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {
